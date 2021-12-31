@@ -67,7 +67,7 @@ app.get('/weather', (req, res) => {
                 });
             }
             res.send({
-                forecast: 'It is cloudy with a chance of pizza.  A temp of ' + forecastData.temperature + ' degrees that feels like ' + forecastData.apparentTemperature + ' degrees.',
+                forecast: forecastData.outlook.slice(0, -1) + ' with a current temp of ' + forecastData.temperature + '°F that feels like ' + forecastData.apparentTemperature + '°F.',
                 location,
                 address: req.query.address
             });
