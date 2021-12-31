@@ -13,6 +13,7 @@ const viewsPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // set up handle bars engine and views location
 app.set('view engine', 'hbs');  //use handlebars npm module with express (it's called hbs, the actual handlebars npm module does not integrate as well with express)
@@ -107,6 +108,6 @@ app.get('*', (req, res) => {
 });
 
 // run server
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.');
+app.listen(port, () => {
+    console.log('Server is up on port: ' + port);
 });
